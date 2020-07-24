@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testwork.databinding.ActivityLitsBinding
+import com.example.testwork.models.JsonResult
 
-class CustomListAdapter(var productList: ArrayList<String>?): RecyclerView.Adapter<CustomListAdapter.ViewHolder>(){
+class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerView.Adapter<CustomListAdapter.ViewHolder>(){
 
       override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomListAdapter.ViewHolder {
       val binding = ActivityLitsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -17,9 +18,21 @@ class CustomListAdapter(var productList: ArrayList<String>?): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: CustomListAdapter.ViewHolder, position: Int) {
        val binding = holder.binding
+        with(binding){
 
-        binding.textviewName.text = "aaaa"
-        binding.textviewDetail.text = "bbbb"
+
+            productList?.let {
+                list ->
+                val item = list[position]
+                val lorem = item.actor.display_login
+
+                binding.textviewName.text = lorem
+                binding.textviewDetail.text = "bbbb"
+            }
+
+
+        }
+
 
     }
 
