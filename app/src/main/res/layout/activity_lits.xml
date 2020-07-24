@@ -9,9 +9,10 @@
 
     >
         <LinearLayout
+            android:id="@+id/acc_pro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">                >
+            android:orientation="vertical">
                 <ImageView
                     android:src="#D58138"
                     android:scaleType="centerCrop"

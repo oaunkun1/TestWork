@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Proflie">
+
+
+    <ImageView
+        android:id="@+id/profile_ac"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/id_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="52dp"
+        tools:text="Name"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profile_ac"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gravatar_id_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/id_ac"
+        app:layout_constraintStart_toStartOf="@+id/id_ac"
+        app:layout_constraintTop_toBottomOf="@+id/id_ac"
+        tools:text="12345" />
+
+    <TextView
+        android:id="@+id/url_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_ac"
+        tools:text="URL" />
+
+    <TextView
+        android:id="@+id/login_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_ac"
+        tools:layout_editor_absoluteY="190dp"
+        tools:text="tass" />
+
+    <TextView
+        android:id="@+id/display_login_ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="@+id/url_ac"
+        app:layout_constraintStart_toStartOf="@+id/url_ac"
+        app:layout_constraintTop_toBottomOf="@+id/url_ac"
+        tools:text="tass" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
