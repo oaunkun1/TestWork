@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.testwork.R
 import com.example.testwork.databinding.ActivityLitsBinding
 import com.example.testwork.models.JsonResult
-import com.example.testwork.servicoes.Proflie
+import com.example.testwork.Proflie
 
 class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerView.Adapter<CustomListAdapter.ViewHolder>(){
 
@@ -48,7 +48,7 @@ class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerVie
                  productList?.let {list->
                      val item =list[adapterPosition]
 
-                     Intent(view.context,Proflie::class.java).apply{
+                     Intent(view.context, Proflie::class.java).apply{
 
                          putExtra("display_login",item.actor.display_login)
                          putExtra("avatar_url",item.actor.avatar_url)

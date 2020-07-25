@@ -1,7 +1,8 @@
-package com.example.testwork.servicoes
+package com.example.testwork
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.codemobiles.mystock.com.example.testwork.showToast
 import com.example.testwork.R
@@ -14,6 +15,8 @@ class Proflie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_proflie)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val display =  intent.getStringExtra("display_login")
         val id = intent.getStringExtra("idaCC")
@@ -36,4 +39,11 @@ class Proflie : AppCompatActivity() {
             .error(R.drawable.account)
             .into(binding.proAcc)
      }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home){
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
