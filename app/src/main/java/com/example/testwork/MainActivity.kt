@@ -1,15 +1,9 @@
 package com.example.testwork
 
-import android.app.Activity
-import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.codemobiles.mystock.com.example.testwork.showToast
 import com.example.testwork.adapter.CustomListAdapter
 import com.example.testwork.databinding.ActivityMainBinding

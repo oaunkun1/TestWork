@@ -11,10 +11,15 @@ import com.example.testwork.databinding.ActivityLitsBinding
 import com.example.testwork.models.JsonResult
 import com.example.testwork.Proflie
 
-class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerView.Adapter<CustomListAdapter.ViewHolder>(){
+class CustomListAdapter(private var productList: List<JsonResult>?) :
+    RecyclerView.Adapter<CustomListAdapter.ViewHolder>() {
 
-      override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomListAdapter.ViewHolder {
-      val binding = ActivityLitsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CustomListAdapter.ViewHolder {
+        val binding =
+            ActivityLitsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding.root, binding)
     }
 
@@ -22,9 +27,8 @@ class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerVie
 
     override fun onBindViewHolder(holder: CustomListAdapter.ViewHolder, position: Int) {
         val binding = holder.binding
-        with(binding){
-            productList?.let {
-                list ->
+        with(binding) {
+            productList?.let { list ->
                 val item = list[position]
                 val name = item.actor.display_login
                 val type = item.type
@@ -41,30 +45,27 @@ class CustomListAdapter(private var productList: List<JsonResult>?): RecyclerVie
 
     }
 
-    inner class ViewHolder(view: View,val binding:ActivityLitsBinding):
-        RecyclerView.ViewHolder(view){
-          init {
-              binding.accPro.setOnClickListener{
-                 productList?.let {list->
-                     val item =list[adapterPosition]
-
-                     Intent(view.context, Proflie::class.java).apply{
-
-                         putExtra("display_login",item.actor.display_login)
-                         putExtra("avatar_url",item.actor.avatar_url)
-                         putExtra("idacc",item.actor.id)
-                         putExtra("login",item.actor.login)
-                         putExtra("gravatar_id",item.actor.gravatar_id)
-                         putExtra("url",item.actor.url)
-                     }.run{
-                         view.context.startActivity(this)
-                 }
+    inner class ViewHolder(view: View, val binding: ActivityLitsBinding) :
+        RecyclerView.ViewHolder(view) {
+        init {
+            binding.accPro.setOnClickListener {
+                productList?.let { list ->
+                    val item = list[adapterPosition]
+                    val id = item.id
+                    Intent(view.context, Proflie::class.java).apply {
+                        putExtra("display_login", item.actor.display_login)
+                        putExtra("avatar_url", item.actor.avatar_url)
+                        putExtra("idacc", id)
+                        putExtra("login", item.actor.login)
+                        putExtra("gravatar_id", item.actor.gravatar_id)
+                        putExtra("url", item.actor.url)
+                    }.run {
+                        view.context.startActivity(this)
+                    }
 
                 }
-           }
-       }
-
-
+            }
+        }
 
     }
 

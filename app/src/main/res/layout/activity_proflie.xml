@@ -4,71 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4E4E4"
     tools:context=".Proflie">
 
-    <ImageView
-        android:id="@+id/pro_acc"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="40dp"
-        android:scaleType="centerCrop"
-        android:src="#D58138"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:src="#D58138" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true">
 
-    <TextView
-        android:id="@+id/name_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/pro_acc"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/pro_acc"
-        app:layout_constraintTop_toBottomOf="@+id/pro_acc"
-        tools:text="name"
-        tools:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/id_acc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="id"
-        tools:textSize="16sp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/url_acc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="@+id/name_display"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="@+id/name_display"
-        app:layout_constraintTop_toBottomOf="@+id/name_display"
-        android:textStyle="normal"
-        android:textSize="18sp"
-        tools:text="url"
-        tools:textSize="16sp" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                app:cardCornerRadius="8dp">
 
-    <TextView
-        android:id="@+id/gravatar_acc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="@+id/url_acc"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="@+id/url_acc"
-        app:layout_constraintTop_toBottomOf="@+id/url_acc"
-        tools:text="gravatar"
-        tools:textSize="16sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/id_acc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="id"
+                        tools:textSize="16sp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/pro_acc"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/id_acc"
+                        android:src="#D58138"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp"
+                        tools:ignore="MissingConstraints"
+                        tools:src="#D58138" />
+
+                    <TextView
+                        android:id="@+id/name_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pro_acc"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        tools:text="name"
+                        tools:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/url_acc"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name_display"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:textStyle="normal"
+                        tools:text="url" />
+
+                    <TextView
+                        android:id="@+id/gravatar_acc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_below="@+id/url_acc"
+                        android:layout_centerHorizontal="true"
+                        tools:text="gravatar"
+                        tools:textSize="14sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

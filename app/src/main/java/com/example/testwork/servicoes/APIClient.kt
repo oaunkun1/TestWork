@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 object APIClient {
 
     private var retrofit:Retrofit? = null
-
     fun getClient():Retrofit{
         if (retrofit == null){
             retrofit  =  Retrofit.Builder()
@@ -17,5 +16,7 @@ object APIClient {
         }
         return retrofit!!
     }
+
+
 
 }

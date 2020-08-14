@@ -15,7 +15,7 @@
             android:orientation="vertical">
                 <ImageView
                     android:src="#D58138"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:id="@+id/imageview_product"
                     tools:src="#D58138"
                     android:layout_width="match_parent"
