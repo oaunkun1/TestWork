@@ -33,6 +33,7 @@ class CustomListAdapter(private var productList: List<JsonResult>?) :
                 val name = item.actor.display_login
                 val type = item.type
                 val image = item.actor.avatar_url
+                val urls = item.actor.url
                 binding.textviewName.text = name
                 binding.textviewDetail.text = type
                 Glide
@@ -40,10 +41,13 @@ class CustomListAdapter(private var productList: List<JsonResult>?) :
                     .load(item.actor.avatar_url)
                     .error(R.drawable.account)
                     .into(binding.imageviewProduct)
+
             }
+
         }
 
     }
+
 
     inner class ViewHolder(view: View, val binding: ActivityLitsBinding) :
         RecyclerView.ViewHolder(view) {
